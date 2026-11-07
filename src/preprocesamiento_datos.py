@@ -154,7 +154,7 @@ def homogeneizar_moneda(df):
 def main():
     print("Iniciando procesamiento de datos...")
 
-    df = cargar_datos("/content/ordenes_limpias.csv")
+    df = cargar_datos("data/ordenes_limpias.csv")
     print(f"Dimensiones iniciales: {df.shape}")
 
     df = eliminar_data_leakage(df)
@@ -166,7 +166,7 @@ def main():
     df = ingenieria_caracteristicas(df)
     df = homogeneizar_moneda(df)
 
-    df.to_csv("ordenes_modelado.csv", index=False)
+    df.to_csv("data/ordenes_modelado.csv", index=False)
     print(f"Dimensiones finales para modelado: {df.shape}")
     print("Archivo generado con éxito: ordenes_modelado.csv")
 
